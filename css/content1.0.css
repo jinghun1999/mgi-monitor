@@ -412,3 +412,39 @@ body {
 
 
 table.panel-table>tbody>tr>td{font-size:12px; font-weight:100;}
+.c_title{display: flex;
+	align-items: left;
+	justify-content: space-around;
+	flex-direction: column; 
+	border:1px #ccc solid; 
+	height: 50px; 
+	width: 50px; 
+	text-align: center; 
+	border-radius: 50%;
+	color:#ccc;
+	font-size: 18px;
+}
+.box-daily-list{height: 80px; text-align:center; position: relative;}
+.box-daily-list>div{width:33%; float:left}
+.box-daily-list>div>p{color:#a8b4be; font-size: 14px;}
+.box-daily-list>div>h3{font-size: 28px; color:#26c6f0; font-weight: 100; margin-top: 0px;}
+
+.box-daily-list>span{
+	position: absolute;
+    background: #032d60;
+    z-index: 999;
+    border-radius: 3px;
+    color: #5b8bb6;
+    font-size: 70%;
+    padding: 2px 4px 0;
+    top: 0px;
+    left: 0px;
+    line-height: 1.5;
+    -ms-transform: rotate(-7deg);
+    -webkit-transform: rotate(-7deg);
+    transform: rotate(-7deg);
+    -webkit-transition: 0 0.1s ease-in;
+    -moz-transition: 0 0.1s ease-in;
+    -o-transition: 0 0.1s ease-in;
+    transition: transform 0.1s ease-in;
+}

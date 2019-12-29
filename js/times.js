@@ -4,7 +4,7 @@ function newTimer() {
     var today;
     today = new Date();
     var str = today.toLocaleDateString();
-    str += "  " + week();
+    //str += "  " + week();
     str += "  " + today.toLocaleTimeString();
     var o = document.getElementById("DateTime");
     o.innerHTML = str;
