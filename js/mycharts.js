@@ -142,8 +142,8 @@ app.controller('customersCtrl', function($scope, $http, $interval) {
         let max_storage = [];
         for(var i = 0; i<d.length; i++){
             titles.push(d[i].pno);
-            now_and_way.push(Math.random()*d[i].now_way);
-            max_storage.push(Math.random()*d[i].max);
+            now_and_way.push(d[i].now_way);
+            max_storage.push(d[i].max);
         }
         var op = {
             //color: ['#38b3f1'],
