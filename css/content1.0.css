@@ -379,10 +379,11 @@ body {
 }
 
 .total-mn {
-	font-size: 1.6rem;
-	color: #fff;
+	font-size: 1.4rem;
+	color: #5b8bb6;
 	padding-left: 5%;
 }
+.total-mn>span>abbr{font-size:1.2rem; font-family: Georgia, 'Times New Roman', Times, serif; font-weight: bold;}
 
 .ym-menu {
 	padding: 0;

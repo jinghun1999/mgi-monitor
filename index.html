@@ -45,7 +45,7 @@
                 <b class="data-title-left">[</b> <span>STORAGE</span> <b class="data-title-right">]</b>
               </div>
               <div class="total-mn" id="total-mn1">
-                <span>关键零件库存监控</span>
+                <span>关键零件库存监控 <abbr>{{pager.parts.pi-1}}/{{pager.parts.pc}}</abbr></span>
               </div>
               <table class="panel-table" style="margin-top:5px !important">
                 <thead>
@@ -98,7 +98,7 @@
                 <b class="data-title-left">[</b><span>SHEETS</span><b class="data-title-right">]</b>
               </div>
               <div class="total-mn" id="total-mn1">
-                <span>未及时上线单据</span>
+                <span>未及时上线单据 <abbr>{{pager.sheets.pi-1}}/{{pager.sheets.pc}}</abbr></span>
               </div>
               <table class="panel-table" style="margin-top:5px !important">
                 <thead>
@@ -108,7 +108,7 @@
                     <th>From</th>
                     <th>To</th>
                     <th>Plan On</th>
-                    <th>Expired</th>
+                    <th>Exp/h</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -136,11 +136,11 @@
                 <b class="data-title-right">]</b>
               </div>
               <div class="total-mn">
-                <span>溢库风险零件</span>
+                <span>溢库风险零件 <abbr>{{pager.overflow.pi-1}}/{{pager.overflow.pc}}</abbr></span>
               </div>
               <div id="box2" class="box-echart box-bottom" style="height:250px;"></div>
               <div class="total-mn">
-                <span>缺件风险零件</span>
+                <span>缺件风险零件 <abbr>{{pager.lack.pi-1}}/{{pager.lack.pc}}</abbr></span>
               </div>
               <div id="box4" class="box-echart" style="height:250px;"></div>
             </div>
@@ -151,7 +151,7 @@
               <i class="topR"></i>
               <i class="bottomL"></i>
               <i class="bottomR"></i>
-              <div class="data-title" style="width: 238px">
+              <div class="data-title" style="width: 238px;">
                 <b class="data-title-left">[</b>
                 <span>KD订单监控</span>
                 <b class="data-title-right">]</b>
@@ -160,7 +160,7 @@
                 <li class="ym-active"><a href="">本年</a></li>
                 <li class="taba"><a href="">本月</a></li>
               </ul> -->
-              <div id="box3" class="box-echart tabcontent"></div>
+              <div id="box3" class="box-echart tabcontent" style="height:270px;"></div>
             </div>
             <div class="data-box1" id="box04" style="margin-top: 30px;">
               <i class="topL"></i>
@@ -234,7 +234,7 @@
   <script type="text/javascript" src="js/echarts.min.js?v=2"></script>
   <script type="text/javascript" src="js/china.js"></script>
   <script type="text/javascript" src="js/angular.min.js"></script>
-  <script type="text/javascript" src="js/mycharts.js?v=321333"></script>
+  <script type="text/javascript" src="js/mycharts.js?v=13"></script>
   <script>
     $(document).ready(function () {
       // $('.ym-menu li').click(function () {
