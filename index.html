@@ -45,7 +45,7 @@
                 <b class="data-title-left">[</b> <span>STORAGE</span> <b class="data-title-right">]</b>
               </div>
               <div class="total-mn" id="total-mn1">
-                <span>关键零件库存监控 <abbr>{{pager.parts.pi-1}}/{{pager.parts.pc}}</abbr></span>
+                <span>关键零件库存监控 <abbr>{{pager.parts.pc>1?pager.parts.pi-1: 1}}/{{pager.parts.pc}}</abbr></span>
               </div>
               <table class="panel-table" style="margin-top:5px !important">
                 <thead>
@@ -98,7 +98,7 @@
                 <b class="data-title-left">[</b><span>SHEETS</span><b class="data-title-right">]</b>
               </div>
               <div class="total-mn" id="total-mn1">
-                <span>未及时上线单据 <abbr>{{pager.sheets.pi-1}}/{{pager.sheets.pc}}</abbr></span>
+                <span>未及时上线单据 <abbr>{{pager.sheets.pc>1?pager.sheets.pi-1: 1}}/{{pager.sheets.pc}}</abbr></span>
               </div>
               <table class="panel-table" style="margin-top:5px !important">
                 <thead>
@@ -136,11 +136,11 @@
                 <b class="data-title-right">]</b>
               </div>
               <div class="total-mn">
-                <span>溢库风险零件 <abbr>{{pager.overflow.pi-1}}/{{pager.overflow.pc}}</abbr></span>
+                <span>溢库风险零件 <abbr>{{pager.overflow.pc>1?pager.overflow.pi-1: 1}}/{{pager.overflow.pc}}</abbr></span>
               </div>
               <div id="box2" class="box-echart box-bottom" style="height:250px;"></div>
               <div class="total-mn">
-                <span>缺件风险零件 <abbr>{{pager.lack.pi-1}}/{{pager.lack.pc}}</abbr></span>
+                <span>缺件风险零件 <abbr>{{pager.lack.pc>1?pager.lack.pi-1: 1}}/{{pager.lack.pc}}</abbr></span>
               </div>
               <div id="box4" class="box-echart" style="height:250px;"></div>
             </div>

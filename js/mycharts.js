@@ -45,12 +45,13 @@ app.controller('customersCtrl', function($scope, $http, $interval) {
             url: 'http://localhost:49280/api/dashboard/getdb',
             data: $scope.pager
         }).then(function(res) {
-            debugger;
             if(res.data.successful){
-                $scope.parts = res.data.data.parts;
-                $scope.sheets = res.data.data.sheets;
-                $scope.daily_report = res.data.data.daily_report;
-                $scope.pager = res.data.data.pager;
+                let dt = res.data.data;
+
+                $scope.parts = dt.parts;
+                $scope.sheets = dt.sheets;
+                $scope.daily_report = dt.daily_report;
+                $scope.pager = dt.pager;
                 var worldMapContainer2 = document.getElementById('box2');
                 //var box01 = document.getElementById("box01");
                 //var box01_h = box01.offsetHeight;
@@ -62,14 +63,21 @@ app.controller('customersCtrl', function($scope, $http, $interval) {
                 };
                 //resizeWorldMapContainer2();
                 var myChart = echarts.init(worldMapContainer2);
-                option = getRiskOverflowOption(res.data.data.risk_overflow);
+                // overflow
+                option = getIssueOption(dt.risk_overflow, '大');
                 myChart.setOption(option);
                 window.onresize = function() {
                     resizeWorldMapContainer2();
                     myChart.resize()
                 };
+
+                // lack
+                option = getIssueOption(dt.risk_lack, '小');
                 myChart = echarts.init(document.getElementById('box4'));
                 myChart.setOption(option);
+
+
+
                 var worldMapContainer = document.getElementById('box3');
                 box03 = document.getElementById("box03");
                 box03_h = box03.offsetHeight;
@@ -83,8 +91,8 @@ app.controller('customersCtrl', function($scope, $http, $interval) {
                 resizeWorldMapContainer();
                 var myChart = echarts.init(worldMapContainer);
                 let _kd_titles = [];
-                for(let i = 0; i< res.data.data.kd_list.length; i++){
-                    _kd_titles.push(res.data.data.kd_list[i].name);
+                for(let i = 0; i< dt.kd_list.length; i++){
+                    _kd_titles.push(dt.kd_list[i].name);
                 }
                 var option = {
                     tooltip: {
@@ -113,7 +121,7 @@ app.controller('customersCtrl', function($scope, $http, $interval) {
                                     }
                                 }
                             },
-                            data: res.data.data.kd_list
+                            data: dt.kd_list
                         }
                     ]
                 };
@@ -123,12 +131,12 @@ app.controller('customersCtrl', function($scope, $http, $interval) {
                     myChart.resize()
                 };
             }else{
-                console.error(res.data.data);
+                console.error(res.data);
             }
         });
     }
 
-    var getRiskOverflowOption = function(d){
+    var getIssueOption = function(d, t){
         let titles = [];
         let now_and_way = [];
         let max_storage = [];
@@ -149,7 +157,7 @@ app.controller('customersCtrl', function($scope, $http, $interval) {
                 //bottom:0,
                 textStyle:{color:'#ccc'},
                 //padding:50,
-                data: ['当前库存+在途库存', '最大库存']
+                data: ['当前库存+在途库存', '最'+t+'库存']
             },
             textStyle: {
                 color: '#ccc'
@@ -179,7 +187,7 @@ app.controller('customersCtrl', function($scope, $http, $interval) {
                 data: now_and_way
             },
             {
-                name: '最大库存',
+                name: '最'+t+'库存',
                 type: 'bar',
                 color:'#EEC591',
                 barWidth: '10%',
