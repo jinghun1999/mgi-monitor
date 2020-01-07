@@ -306,6 +306,8 @@ body {
 	border-bottom: solid 1px #a8b4be;
 	border-top: solid 2px #a8b4be;
 }
+.panel-table tbody tr td small{font-weight: 100;font-size:10px;-webkit-transform-origin-x: 0;-webkit-transform: scale(0.80);}
+.panel-table tbody tr td b{font-size:16px; font-weight: 100; color:#f4e925}
 
 .data-box1-data {
 	padding: 0;
@@ -341,13 +343,14 @@ body {
 	.title-date {
 		margin-bottom: 20px;
 	}
-}/*@media (min-width: 992px) and (max-width: 1199px) {	.title-date {		height: 5%;	}	.panel-box1 {		height: 30%;	}}@media (min-width: 1200px) {	.title-date {		height: 5%;	}	.panel-box1 {		height: 30%;	}}*/.title-date>p {
+}/*@media (min-width: 992px) and (max-width: 1199px) {	.title-date {		height: 5%;	}	.panel-box1 {		height: 30%;	}}@media (min-width: 1200px) {	.title-date {		height: 5%;	}	.panel-box1 {		height: 30%;	}}*/
+.title-date>p {
 	color: #5b8bb6;
 	/*background:linear-gradient(to bottom, #043768, #000c3b,#043768);*/
 	box-shadow: inset 0 0 30px #07417a;
 	border: solid 2px #032d60;
-	border-radius: 10px;
-	/*box-shadow:4px 2px 6px #033579, -4px -2px 6px #033579, 0px 0px 12px 5px #033579 inset;*/
+	/*border-radius: 10px;
+	box-shadow:4px 2px 6px #033579, -4px -2px 6px #033579, 0px 0px 12px 5px #033579 inset;*/
 	font-family: "微软雅黑";
 	font-size: 2rem;
 	line-height: 35px;

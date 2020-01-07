@@ -35,8 +35,8 @@ app.controller('customersCtrl', function($scope, $http, $interval) {
     $scope.pager = {
         parts: {ps: 7, pi: 1, pc:1},
         sheets: {ps: 7, pi: 1, pc:1},
-        overflow: {ps: 12, pi: 1, pc:1},
-        lack: {ps: 12, pi: 1, pc:1},
+        overflow: {ps: 10, pi: 1, pc:1},
+        lack: {ps: 10, pi: 1, pc:1},
     };
     var getData = function(){
         $http({
@@ -64,7 +64,7 @@ app.controller('customersCtrl', function($scope, $http, $interval) {
                 //resizeWorldMapContainer2();
                 var myChart = echarts.init(worldMapContainer2);
                 // overflow
-                option = getIssueOption(dt.risk_overflow, '大');
+                option = getIssueOption(dt.risk_overflow, 'Max');
                 myChart.setOption(option);
                 window.onresize = function() {
                     resizeWorldMapContainer2();
@@ -72,10 +72,9 @@ app.controller('customersCtrl', function($scope, $http, $interval) {
                 };
 
                 // lack
-                option = getIssueOption(dt.risk_lack, '小');
+                option = getIssueOption(dt.risk_lack, 'Min');
                 myChart = echarts.init(document.getElementById('box4'));
                 myChart.setOption(option);
-
 
 
                 var worldMapContainer = document.getElementById('box3');
@@ -157,7 +156,7 @@ app.controller('customersCtrl', function($scope, $http, $interval) {
                 //bottom:0,
                 textStyle:{color:'#ccc'},
                 //padding:50,
-                data: ['当前库存+在途库存', '最'+t+'库存']
+                data: ['Current+Way', t+' Stock']
             },
             textStyle: {
                 color: '#ccc'
@@ -180,16 +179,16 @@ app.controller('customersCtrl', function($scope, $http, $interval) {
                 data: titles,
             }],
             series: [{
-                name: '当前库存+在途库存',
+                name: 'Current+Way',
                 type: 'bar',
                 color:'#22DD92',
                 barWidth: '20%',
                 data: now_and_way
             },
             {
-                name: '最'+t+'库存',
+                name: t+' Stock',
                 type: 'bar',
-                color:'#EEC591',
+                color:'#f4e925',
                 barWidth: '10%',
                 data: max_storage
             }]
